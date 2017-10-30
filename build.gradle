@@ -10,6 +10,7 @@ buildscript {
     dependencies {
         classpath "org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}"
         classpath "org.springframework.build.gradle:propdeps-plugin:0.0.7"
+        classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.1'
         //jhipster-needle-gradle-buildscript-dependency - JHipster will add additional gradle build script plugins here
     }
 }
@@ -99,6 +100,7 @@ apply from: 'gradle/docker.gradle'
 apply from: 'gradle/sonar.gradle'
 apply from: 'gradle/liquibase.gradle'
 apply from: 'gradle/mapstruct.gradle'
+apply from: 'gradle/grpc.gradle'
 //jhipster-needle-gradle-apply-from - JHipster will add additional gradle scripts to be applied here
 
 if (project.hasProperty('prod')) {
@@ -197,6 +199,14 @@ dependencies {
     optional ("org.springframework.boot:spring-boot-configuration-processor:${spring_boot_version}") {
         exclude group: 'com.vaadin.external.google', module: 'android-json'
     }
+    compile 'org.lognet:grpc-spring-boot-starter:2.0.0'
+    compile 'com.google.guava:guava:20.0'
+    compile 'io.grpc:grpc-core:1.1.1'
+    compile 'io.grpc:grpc-context:1.1.1'
+    compile 'io.grpc:grpc-protobuf:1.1.1'
+    compile 'io.grpc:grpc-stub:1.1.1'
+    compile 'io.reactivex.rxjava2:rxjava:2.1.5'
+    compile 'com.salesforce.servicelibs:rxgrpc-stub:0.6.1'
     //jhipster-needle-gradle-dependency - JHipster will add additional dependencies here
 }
 
