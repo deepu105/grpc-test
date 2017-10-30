@@ -1,0 +1,10 @@
+[
+    {
+        "name": "Grpc generator",
+        "npmPackageName": "generator-jhipster-grpc",
+        "description": "Adds support for gRPC and generates gRPC CRUD services",
+        "hookFor": "entity",
+        "hookType": "post",
+        "generatorCallback": "jhipster-grpc:entity"
+    }
+]
